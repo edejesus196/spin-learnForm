@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/signature_pad@4.0.0/dist/signature_pad.umd.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+    <style>
+        html {margin: 0; padding: 0;}
+        body { margin: 0; font-family: 'Fredoka One', cursive; }
+
+        h1 {
+            text-align: center;
+        }
+
+        .form {
+            max-width: 1200px;
+            margin-right: auto;
+            margin-left: auto;
+            background-color:  rgb(172, 211, 235);
+            padding: 0 50px;
+        }
+
+        div {
+            padding: 10px 0;
+        }
+
+        .column {
+            display: flex;
+            flex-direction: column;
+        }
+
+         .row {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .spaceAround {
+            justify-content: space-around;
+        }
+
+        sub {
+            display: block;
+            margin-left: 25px;
+        }
+
+        canvas {
+            border: 1px solid rgb(132 162 181);
+        }
+
+        .section {
+            margin-bottom: 25px;
+        }
+
+        input[type='checkbox'] {
+            background-color: rgb(255, 236, 0) !important;
+        }
+
+        .footer {
+            font-weight: bold;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class='form'>
+        <h1>Student Card</h1>
+        <!-- <p>School:</p> -->
+        <div class="section column">
+            <div><label for="school">School:</label><input name="school" type="text"></input></div>
+            <div><label for="name">Student Name:</label><input name="name" type="text"></input></div>
+            <div><label for="grade">Grade:</label><input name="grade" type="text"></input></div>
+        </div>
+
+      <!--   <p>Student Name:</p>
+        <p>Grade:</p> -->
+
+
+        <div class="section column">
+            <div>
+                <input type="checkbox" name="attendance"></input>
+                <label for="attendance">School Attendance<sub>90% or Higher</sub></label>
+            </div>
+
+            <div>
+                <input type="checkbox" name="grades"></input>
+                <label for="grades">Excellent Graces</sub></label>
+            </div>
+
+
+            <div>
+                <input type="checkbox" name="behavior"></input>
+                <label for="behavior">Excellent Behavior</sub></label>
+            </div>
+
+        </div>
+
+        <div class="section row spaceAround">
+            <div class="column">
+                <canvas id='parentSignaturePad'></canvas>
+                <button id='parentClear'>Clear</button>
+                <div class="signaure">Parents' Signature</div>
+                <!-- <div class="signaure">Date</div> -->
+                <input type="date" name="parentDate">
+                <label for=parentDate>Date</label>
+
+            </div>
+            <div class="column">
+                <canvas id='teacherSignaturePad'></canvas>
+                <button id='teacherClear'>Clear</button>
+                <div class="signaure">Teacher's Signature</div>
+                <input type="date" name="teacherDate">
+                <label for=teacherDate>Date</label>
+            </div>
+        </div>
+
+        <div class="section column">
+            <label for='parent'> Parent comments:</label>
+            <textarea name='parent'></textarea>
+            <label for='teacher'> Teacher comments:</label>
+            <textarea name='teacher'></textarea>
+        </div>
+
+        <h3>Instructions:</h3>
+        <ul>
+            <li>Check attendance, grade performance, and behavoir only if the studnet is meting and exceeding expectations. Teaccher and Parent must sign and date!</li>
+            <li>Students meeting and exceeding expectations will earn rewards as par of our Spin&Learn program</li>
+        </ul>
+
+        <div class='footer'>Thank you for your commitment to excellence!</div>
+
+
+
+    </div>
+
+
+
+    <script>
+        const parent = document.getElementById("parentSignaturePad")
+        const parentSignaturePad = new SignaturePad(parent, {
+            penColor: 'rgb(0, 0, 0)'
+        });
+
+        const teacher = document.getElementById("teacherSignaturePad")
+        const teacherSignaturePad = new SignaturePad(teacher, {
+            penColor: 'rgb(0, 0, 0)'
+        });
+
+        const parentClear = document.getElementById("parentClear");
+
+        parentClear.addEventListener('click', function (even) {
+            parentSignaturePad.clear();
+            // teacherSignaturePad.clear();
+        })
+
+        const teacherClear = document.getElementById("teacherClear");
+
+        teacherClear.addEventListener('click', function (even) {
+            teacherSignaturePad.clear();
+            // teacherSignaturePad.clear();
+        })
+
+
+    </script>
+</body>
+</html>
