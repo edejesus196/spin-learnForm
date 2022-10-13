@@ -1,0 +1,137 @@
+.g-div {
+  width: 100%;
+  height: auto;
+
+  display: flex;
+  justify-content: center;
+}
+.form {
+  background-color: rgb(172, 211, 235);
+  width: 800px;
+  /* height: 100vh; */
+  padding: 0 40px 100px 40px;
+
+  display: block;
+}
+
+.header {
+  height: 150px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.student-info {
+  /* width: 500px; */
+  height: 150px;
+  margin-top: 20px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  width: 80% !important;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid black;
+  outline: none;
+  font-size: 22px;
+}
+
+.student-input {
+  width: 68% !important;
+}
+
+.student-info div {
+  margin: 10px 10px 10px 0px;
+}
+
+.checkbox-section {
+  margin-top: 50px;
+}
+
+input[type="checkbox"] {
+  width: 100px !important;
+  height: 50px;
+  margin: 0;
+
+  position: relative;
+  left: -20px;
+}
+
+input[type="checkbox"]:checked {
+  accent-color: yellow;
+}
+.checkbox-info {
+  width: 100%;
+  height: 60px;
+  margin-bottom: 25px;
+
+  display: flex;
+  align-items: center;
+}
+
+.school-atn {
+  position: relative;
+  left: -25px;
+  display: flex;
+  flex-direction: column;
+}
+
+.checkbox-info div sub {
+  display: block;
+  margin-left: 25px;
+}
+
+.sign-section {
+  padding-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.sign-section .parent {
+  width: 300px;
+  margin: 10px 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+canvas {
+  width: 220px;
+  height: 100px;
+  background: rgb(254, 253, 253);
+
+  border-bottom: 2px solid rgb(0, 0, 0);
+}
+.comments-section {
+  margin-top: 50px;
+
+  display: flex;
+  flex-direction: column;
+}
+textarea {
+  min-height: 250px;
+  resize: vertical;
+  margin-bottom: 30px;
+  font-size: 22px;
+}
+
+.footer {
+  width: 100%;
+  text-align: center;
+}
+
+.submit{
+    width: 100%;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+button{
+    width: 200px;
+    height: 50px;
+}
